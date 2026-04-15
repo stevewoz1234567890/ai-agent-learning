@@ -1,13 +1,22 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
 [project]
 name = "course"
 version = "0.1.0"
-description = "Add your description here"
+description = "Documentation RAG: BM25 retrieval and optional LLM answers over GitHub markdown corpora."
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = [
+    "openai>=1.0.0",
     "python-frontmatter>=1.1.0",
+    "rank-bm25>=0.2.2",
     "requests>=2.32.5",
 ]
+
+[tool.setuptools]
+py-modules = ["main", "ingest", "chunking", "rag"]
 
 [dependency-groups]
 dev = [
